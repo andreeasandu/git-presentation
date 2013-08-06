@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 style="background-color:light-blue; text-align:center;">8. Merging</h2>
+
+<h3>First branch</h3>
+<pre>
+	$ git checkout -b iss53
+	$ vim index.html
+	$ git commit -a -m "fixed 1/2 [issue 53]"
+</pre>
+
+<h3>Second branch</h3>
+<pre>
+	$ git checkout master
+	$ git checkout -b hotfix
+	$ vim index.html
+	$ git commit -a -m "hotfix"
+</pre>
+
+<img src="../2branches.png" alt="the 3 states" width="400" height="200">
+</p>
+
+<h3>Merge and delete hotfix</h3>
+<pre>
+	$ git checkout master
+	$ git merge hotfix
+	$ git branch -d hotfix
+</pre>
+
+<img src="../merge1.png" alt="the 3 states" width="300" height="200">
+</p>
+
+<h3>One more change on iss53</h3>
+<pre>
+	$ git checkout iss53
+	$ vim index.html
+	$ git commit -a -m "fixed [issue 53]"
+</pre>
+
+<img src="../change2.png" alt="the 3 states" width="300" height="200">
+</p>
+
+<h3>The 3-way merge</h3>
+<pre>
+	$ git checkout master
+	$ git merge iss53
+	$ git branch -d iss53
+</pre>
+
+<img src="../merge2.png" alt="the 3 states" width="300" height="200">
+</p>
+
+<p align="center">
+<a href="8.html">Previous</a> 
+<a href="10.html">Next</a> 
+</p>
+
+</body>
+</html>
